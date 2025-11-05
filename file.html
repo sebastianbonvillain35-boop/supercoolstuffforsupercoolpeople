@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Download Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .download-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+        .download-button:hover {
+            background-color: #45a049;
+        }
+        .warning {
+            color: #d32f2f;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="warning">
+        NOTICE: By clicking the button below, you are initiating a file download.
+    </div>
+    
+    <button class="download-button" id="downloadBtn">
+        Click to Download File
+    </button>
+
+    <script>
+        // *** IMPORTANT: Replace this placeholder with your actual Google Drive download link ***
+        // Ensure the link is the direct download URL, often obtained by replacing '/view' with '/uc?export=download'
+        const DRIVE_DOWNLOAD_URL = "https://drive.google.com/drive/folders/184JSaAhcLoCwaeJCvA9AJzNd9tuSszM4?usp=sharing";
+
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // This action is explicitly tied to the user's click event.
+            // This is the SAFE and standard way to initiate a download.
+            window.location.href = DRIVE_DOWNLOAD_URL;
+        });
+    </script>
+</body>
+</html>
